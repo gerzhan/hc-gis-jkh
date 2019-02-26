@@ -2,7 +2,66 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "",
-  "projects": {},
+  "projects": {
+    "gis-jkh-api-server": {
+      "root": "apps/gis-jkh/api-server",
+      "sourceRoot": "apps/gis-jkh/api-server/src",
+      "projectType": "application",
+      "prefix": "gis-jkh-api-server",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/builders:node-build",
+          "options": {
+            "outputPath": "dist/apps/gis-jkh/api-server",
+            "main": "apps/gis-jkh/api-server/src/main.ts",
+            "tsConfig": "apps/gis-jkh/api-server/tsconfig.app.json",
+            "assets": [
+              "apps/gis-jkh/api-server/src/assets"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/gis-jkh/api-server/src/environments/environment.ts",
+                  "with": "apps/gis-jkh/api-server/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/builders:node-execute",
+          "options": {
+            "buildTarget": "gis-jkh-api-server:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/gis-jkh/api-server/tsconfig.app.json",
+              "apps/gis-jkh/api-server/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "apps/gis-jkh/api-server/jest.config.js",
+            "tsConfig": "apps/gis-jkh/api-server/tsconfig.spec.json"
+          }
+        }
+      }
+    }
+  },
   "cli": {
     "warnings": {
       "typescriptMismatch": false,
