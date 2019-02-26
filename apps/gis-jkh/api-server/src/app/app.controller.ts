@@ -10,4 +10,9 @@ export class AppController {
   getData(): string {
     return this.appService.getData();
   }
+
+  @Get('/ping')
+  getPingData(): string {
+    return this.appService.getPingData();
+  }
 }
