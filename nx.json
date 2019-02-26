@@ -9,9 +9,13 @@
   },
   "projects": {
     "gis-jkh-api-server": {
-      "tags": [
-        "gis-jkh"
-      ]
+      "tags": ["gis-jkh"]
+    },
+    "gis-jkh-admin-ui-tsj": {
+      "tags": ["gis-jkh"]
+    },
+    "gis-jkh-admin-ui-tsj-e2e": {
+      "tags": []
     }
   }
 }
