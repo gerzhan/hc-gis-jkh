@@ -16,6 +16,9 @@
     },
     "gis-jkh-admin-ui-tsj-e2e": {
       "tags": []
+    },
+    "gis-jkh-api-dto": {
+      "tags": []
     }
   }
 }

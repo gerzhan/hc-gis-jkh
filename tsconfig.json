@@ -12,7 +12,9 @@
     "typeRoots": ["node_modules/@types"],
     "lib": ["es2017", "dom"],
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@hc/gis-jkh/api-dto": ["libs/gis-jkh/api-dto/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

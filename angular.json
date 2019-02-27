@@ -173,6 +173,44 @@
           }
         }
       }
+    },
+    "gis-jkh-api-dto": {
+      "root": "libs/gis-jkh/api-dto",
+      "sourceRoot": "libs/gis-jkh/api-dto/src",
+      "projectType": "library",
+      "prefix": "hc",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "libs/gis-jkh/api-dto/tsconfig.lib.json",
+            "project": "libs/gis-jkh/api-dto/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/gis-jkh/api-dto/src/test.ts",
+            "tsConfig": "libs/gis-jkh/api-dto/tsconfig.spec.json",
+            "karmaConfig": "libs/gis-jkh/api-dto/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/gis-jkh/api-dto/tsconfig.lib.json",
+              "libs/gis-jkh/api-dto/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {
