@@ -1,4 +1,4 @@
-export interface AboutAplicationDTO {
+export interface AboutApplicationDTO {
   name: string;
   version: string;
 }

@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
+import { AboutApplicationDTO } from '@hc/gis-jkh/api-dto';
 
-interface Ping {
+export interface Ping {
   msg: string;
 }
 
@@ -12,5 +13,13 @@ export class AppService {
 
   getPingData(): Ping {
     return {msg: "Pong"}
+  }
+
+  getAboutApplication(): AboutApplicationDTO {
+    const response: AboutApplicationDTO = {
+      name: 'api-server',
+      version: '0.0.2'
+    };
+    return response;
   }
 }
