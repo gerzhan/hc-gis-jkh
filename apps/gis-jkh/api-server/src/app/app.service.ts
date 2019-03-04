@@ -12,7 +12,7 @@ export class AppService {
   }
 
   getPingData(): Ping {
-    return {msg: "Pong"}
+    return { msg: 'Pong' };
   }
 
   getAboutApplication(): AboutApplicationDTO {

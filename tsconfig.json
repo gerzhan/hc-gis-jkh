@@ -13,7 +13,10 @@
     "lib": ["es2017", "dom"],
     "baseUrl": ".",
     "paths": {
-      "@hc/gis-jkh/api-dto": ["libs/gis-jkh/api-dto/src/index.ts"]
+      "@hc/gis-jkh/api-dto": ["libs/gis-jkh/api-dto/src/index.ts"],
+      "@hc/gis-jkh/api-client-rest": [
+        "libs/gis-jkh/api-client-rest/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

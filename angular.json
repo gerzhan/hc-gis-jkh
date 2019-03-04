@@ -23,12 +23,10 @@
               "optimization": true,
               "extractLicenses": true,
               "inspect": false,
-              "fileReplacements": [
-                {
-                  "replace": "apps/gis-jkh/api-server/src/environments/environment.ts",
-                  "with": "apps/gis-jkh/api-server/src/environments/environment.prod.ts"
-                }
-              ]
+              "fileReplacements": [{
+                "replace": "apps/gis-jkh/api-server/src/environments/environment.ts",
+                "with": "apps/gis-jkh/api-server/src/environments/environment.prod.ts"
+              }]
             }
           }
         },
@@ -86,12 +84,10 @@
           },
           "configurations": {
             "production": {
-              "fileReplacements": [
-                {
-                  "replace": "apps/gis-jkh/admin-ui-tsj/src/environments/environment.ts",
-                  "with": "apps/gis-jkh/admin-ui-tsj/src/environments/environment.prod.ts"
-                }
-              ],
+              "fileReplacements": [{
+                "replace": "apps/gis-jkh/admin-ui-tsj/src/environments/environment.ts",
+                "with": "apps/gis-jkh/admin-ui-tsj/src/environments/environment.prod.ts"
+              }],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -101,13 +97,11 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                }
-              ]
+              "budgets": [{
+                "type": "initial",
+                "maximumWarning": "2mb",
+                "maximumError": "5mb"
+              }]
             }
           }
         },
@@ -203,6 +197,37 @@
               "libs/gis-jkh/api-dto/tsconfig.spec.json"
             ],
             "exclude": ["**/node_modules/**"]
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "gis-jkh-api-client-rest": {
+      "root": "libs/gis-jkh/api-client-rest",
+      "sourceRoot": "libs/gis-jkh/api-client-rest/src",
+      "projectType": "library",
+      "prefix": "api-sdk-rest",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/gis-jkh/api-client-rest/tsconfig.lib.json",
+              "libs/gis-jkh/api-client-rest/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/gis-jkh/api-client-rest/jest.config.js",
+            "tsConfig": "libs/gis-jkh/api-client-rest/tsconfig.spec.json",
+            "setupFile": "libs/gis-jkh/api-client-rest/src/test-setup.ts"
           }
         }
       },

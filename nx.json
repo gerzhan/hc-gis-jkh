@@ -19,6 +19,9 @@
     },
     "gis-jkh-api-dto": {
       "tags": []
+    },
+    "gis-jkh-api-client-rest": {
+      "tags": []
     }
   }
 }
