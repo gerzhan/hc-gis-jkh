@@ -1,7 +1,7 @@
 import * as alasql from 'alasql';
-import { AppartmentList } from './data/kutuzova36_house.js';
+import { AppartmentList } from './data/maykovskogo18_house.js';
 
-import { RealtyList as Realty } from './data/kutuzova36_realty.js';
+import { RealtyList as Realty } from './data/maykovskogo18_realty.js';
 
 import { Injectable } from '@nestjs/common';
 
