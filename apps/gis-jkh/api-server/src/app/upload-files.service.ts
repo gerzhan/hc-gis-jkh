@@ -1,20 +1,4 @@
-import {
-  Injectable,
-  Post,
-  UseInterceptors,
-  FileInterceptor,
-  UploadedFile
-} from '@nestjs/common';
-
-/**
- * @see https://docs.nestjs.com/techniques/file-upload
- */
+import { Injectable } from '@nestjs/common';
 
 @Injectable()
-export class UploadFilesService {
-  @Post('upload')
-  @UseInterceptors(FilesInterceptor('file'))
-  uploadFile(@UploadedFiles() files) {
-    console.log('file', files);
-  }
-}
+export class UploadFilesService {}
